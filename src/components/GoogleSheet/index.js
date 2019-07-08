@@ -117,6 +117,7 @@ class GoogleSheet extends React.Component {
         copying: false
       });
     } catch (e) {
+      console.log(e);
       let error = e;
       if (e.result && e.result.error) {
         error = e.result.error;
@@ -146,6 +147,7 @@ class GoogleSheet extends React.Component {
       try {
         spreadSheets = await this.getSpreadSheets();
       } catch (e) {
+        console.log(e)
         error = e;
       }
     }
@@ -182,6 +184,7 @@ class GoogleSheet extends React.Component {
           );
         },
         error => {
+          console.log(error)
           this.setState({
             error
           });
